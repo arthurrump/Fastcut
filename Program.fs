@@ -45,7 +45,7 @@ let createCuts config video =
             let startTs = TimeSpan.Parse(cut.start)
             let endTs = TimeSpan.Parse(cut.``end``) - startTs
             let cutFile = $"{video.name}_{i}{ext}"
-            let command = $"-ss {printTs startTs} -i \"{config.input}\" -to {printTs endTs} -c copy -avoid_negative_ts 1 {cutFile}"
+            let command = $"-ss {printTs startTs} -i \"{config.input}\" -ss 00:00:00 -to {printTs endTs} -c copy -avoid_negative_ts 1 {cutFile}"
             cutFile, command)
 
     let cutFiles = cutNameCommands |> List.map fst
