@@ -5,6 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>fastcut</ToolCommandName>
+    <AssemblyName>fastcut</AssemblyName>
     <PackageOutputPath>./tool</PackageOutputPath>
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
