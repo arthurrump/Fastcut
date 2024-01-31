@@ -26,6 +26,10 @@
             src = ./.;
             projectFile = "Fastcut.fsproj";
 
+            postConfigure = ''
+              substituteInPlace Program.fs --replace "\"ffmpeg\"" "\"${pkgs.ffmpeg}/bin/ffmpeg\""
+            '';
+
             dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
             dotnet-runtime = pkgs.dotnetCorePackages.runtime_8_0;
 
